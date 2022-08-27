@@ -1,0 +1,1 @@
+cosnt canvas = document.getElementById('game');

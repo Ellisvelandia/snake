@@ -15,8 +15,8 @@ function drawGame() {
 }
 
 function clearScreen() {
-  ctx.fillStyle = "black";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "black";
+  ctx.fillRect(0, 0,canvas.width,canvas.height);
 }
 
 drawGame();
