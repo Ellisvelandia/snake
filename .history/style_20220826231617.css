@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  box-shadow: #ece0b 20px 10px 50px;
+  max-width:  80vw;
+  height: 60vh;
+}

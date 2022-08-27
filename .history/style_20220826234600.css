@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 5rem;
+}
+canvas {
+  width: 800px;
+  hei
+  box-shadow: #000 20px 10px 50px;
+}
