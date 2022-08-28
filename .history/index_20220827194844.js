@@ -154,7 +154,6 @@ function checkAppleCollision() {
     appleY = Math.floor(Math.random() * tileCount);
     tailLength++;
     score++;
-    gulpSound.play();
   }
 }
 

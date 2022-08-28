@@ -29,8 +29,6 @@ let yVelocity = 0;
 
 let score = 0;
 
-const gulpSound = new Audio("gulp.mp3");
-
 // game  loop
 
 function drawGame() {
@@ -154,7 +152,6 @@ function checkAppleCollision() {
     appleY = Math.floor(Math.random() * tileCount);
     tailLength++;
     score++;
-    gulpSound.play();
   }
 }
 
@@ -192,6 +189,6 @@ function keyDown(event) {
     inputsYVelocity = 0;
     inputsXVelocity = 1;
   }
-}
+}A
 
 drawGame();
