@@ -55,6 +55,7 @@ function drawGame() {
   setTimeout(drawGame, 1000 / speed);
 }
 
+
 function isGameOver() {
   let gameOver = false;
 

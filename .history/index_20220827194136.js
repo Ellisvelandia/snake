@@ -28,29 +28,14 @@ let score = 0;
 // game  loop
 
 function drawGame() {
-  xVelocity = inputsXVelocity;
-  yVelocity = inputsYVelocity;
-
-  changeSnakePosition();
-  let result = isGameOver();
-  if (result) {
-    return;
-  }
-
   clearScreen();
+  changeSnakePosition();
 
   checkAppleCollision();
   drawApple();
   drawSnake();
 
   drawScore();
-
-  if (score > 5) {
-    speed = 9;
-  }
-  if (score > 10) {
-    speed = 11;
-  }
 
   setTimeout(drawGame, 1000 / speed);
 }
