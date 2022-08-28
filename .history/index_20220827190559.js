@@ -15,7 +15,7 @@ let tileSize = canvas.width / tileCount - 2;
 let headX = 10;
 let headY = 10;
 const snakePart = [];
-let tailLenght = 2;
+let tailL
 
 let appleX = 5;
 let appleY = 5;
@@ -59,7 +59,6 @@ function checkAppleCollision() {
   if (appleX === headX && appleY == headY) {
     appleX = Math.floor(Math.random() * tileCount);
     appleY = Math.floor(Math.random() * tileCount);
-    tailLenght++;
   }
 }
 

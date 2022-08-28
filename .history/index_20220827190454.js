@@ -4,7 +4,7 @@ const ctx = canvas.getContext("2d");
 class SnakePart{
   constructor(x, y) {
     this.x = x;
-    this.y = y;
+    this.
   }
 }
 
@@ -14,8 +14,6 @@ let tileCount = 20;
 let tileSize = canvas.width / tileCount - 2;
 let headX = 10;
 let headY = 10;
-const snakePart = [];
-let tailLenght = 2;
 
 let appleX = 5;
 let appleY = 5;
@@ -59,7 +57,6 @@ function checkAppleCollision() {
   if (appleX === headX && appleY == headY) {
     appleX = Math.floor(Math.random() * tileCount);
     appleY = Math.floor(Math.random() * tileCount);
-    tailLenght++;
   }
 }
 
