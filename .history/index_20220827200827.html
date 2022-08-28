@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Snake</title>
+  </head>
+  <body>
+
+           /* svg styles and colors*/
+      
+      .cls-1 {
+        isolation: isolate;
+      }
+      
+      .cls-2 {
+        fill: #d4f4f3;
+      }
+      
+      .cls-3 {
+        fill: #3a1d59;
+      }
+      
+      .cls-4 {
+        fill: #44254f;
+      }
+      
+      .cls-5 {
+        fill: #43294f;
+      }
+      
+      .cls-6 {
+        fill: #49334f;
+      }
+      
+      .cls-7 {
+        fill: #4b3751;
+      }
+      
+      .cls-8 {
+        fill: #523e59;
+      }
+      
+      .cls-9 {
+        fill: #c2d696;
+      }
+      
+      .cls-10 {
+        fill: #96a37b;
+      }
+      
+      .cls-11 {
+        fill: #654a6b;
+      }
+      
+      .cls-12 {
+        fill: #0a253e;
+      }
+      
+      .cls-13 {
+        fill: #0a2038;
+      }
+      
+      .cls-14 {
+        fill: #0c2b41;
+      }
+      
+      .cls-15 {
+        fill: #0c2c42;
+      }
+      
+      .cls-16 {
+        fill: #0d344a;
+      }
+      
+      .cls-17 {
+        fill: #0d384e;
+      }
+      
+      .cls-18 {
+        fill: #0f3f57;
+      }
+      
+      .cls-19 {
+        fill: #5da8b0;
+      }
+      
+      .cls-20 {
+        fill: #3d8492;
+      }
+      
+      .cls-21 {
+        fill: #124c6a;
+      }
+      
+      .cls-22,
+      .cls-25 {
+        fill: #126e87;
+      }
+      
+      .cls-22,
+      .cls-28 {
+        opacity: 0.5;
+      }
+      
+      .cls-23 {
+        fill: #5dd39e;
+      }
+      
+      .cls-24 {
+        fill: #a5f2cd;
+      }
+      
+      .cls-25,
+      .cls-26,
+      .cls-30 {
+        opacity: 0.3;
+      }
+      
+      .cls-26 {
+        fill: #1729aa;
+      }
+      
+      .cls-27,
+      .cls-31 {
+        fill: #513b56;
+      }
+      
+      .cls-28,
+      .cls-30 {
+        fill: #301c35;
+        mix-blend-mode: darken;
+      }
+      
+      .cls-29 {
+        fill: #e23081;
+      }
+      
+      .cls-31 {
+        opacity: 0.7;
+      }
+      
+      .cls-32 {
+        fill: #379cb7;
+      }
+      
+      .cls-33 {
+        fill: #d4d82b;
+      }
+      
+      .cls-34 {
+        fill: #fff;
+      }
+      
+      .cls-35 {
+        fill: #09505b;
+      }
+      
+      .cls-36 {
+        fill: #155c6d;
+      }
+
+
+      /* custom styles  and animations */
+      
+      body {
+        text-align: center;
+      }
+      
+      svg {
+        max-width: 1200px;
+        display: inline-block;
+      }
+      
+      #pink,
+      #pink-2 {
+        animation: a-fill 1s linear infinite;
+      }
+      
+      @keyframes a-fill {
+        0% {
+          fill: #AD2D79;
+        }
+        25% {
+          fill: #FF885F;
+        }
+        75% {
+          fill: #FFE576;
+        }
+        100% {
+          fill: #AD2D79;
+        }
+      }
+      
+      #blue,
+      #blue-2 {
+        animation: b-fill 1s linear infinite;
+      }
+      
+      @keyframes b-fill {
+        0% {
+          fill: #FF885F;
+        }
+        25% {
+          fill: #FFE576;
+        }
+        75% {
+          fill: #AD2D79;
+        }
+        100% {
+          fill: #FF885F;
+        }
+      }
+      
+      #yellow,
+      #yellow-2 {
+        animation: c-fill 1s linear infinite;
+      }
+      
+      @keyframes c-fill {
+        0% {
+          fill: #FFE576;
+        }
+        25% {
+          fill: #AD2D79;
+        }
+        75% {
+          fill: #FF885F;
+        }
+        100% {
+          fill: #FFE576;
+        }
+      }
+      
+      #tongue-2 {
+        animation: tongue-anim 2s ease infinite;
+        transform-origin: top right;
+        transform-box: fill-box;
+      }
+      
+      @keyframes tongue-anim {
+        0% {
+          transform: translate(30px, -50px)
+        }
+        50% {
+          transform: rotate(10deg);
+        }
+        51% {
+          transform: rotate(-10deg);
+        }
+        52% {
+          transform: rotate(10deg);
+        }
+        53% {
+          transform: rotate(-10deg);
+        }
+        54% {
+          transform: rotate(10deg);
+        }
+        55% {
+          transform: rotate(-10deg);
+        }
+        56% {
+          transform: rotate(10deg);
+        }
+        57% {
+          transform: rotate(-10deg);
+        }
+        58% {
+          transform: rotate(10deg);
+        }
+        100% {
+          transform: translate(30px, -50px)
+        }
+      }
+      
+      #rattle {
+        animation: rattle-anim 2s ease infinite;
+        transform-origin: bottom center;
+        transform-box: fill-box;
+      }
+      
+      @keyframes rattle-anim {
+        10% {
+          transform: rotate(-20deg)
+        }
+        25% {
+          transform: rotate(0)
+        }
+        30% {
+          transform: rotate(-20deg)
+        }
+        35% {
+          transform: rotate(0)
+        }
+        40% {
+          transform: rotate(-20deg)
+        }
+        45% {
+          transform: rotate(0)
+        }
+        60% {
+          transform: rotate(-20deg)
+        }
+        75% {
+          transform: rotate(0)
+        }
+        85% {
+          transform: rotate(-10deg)
+        }
+      }
+      
+      #tail {
+        animation: tail-anim 2s ease infinite;
+        transform-origin: right top;
+        transform-box: fill-box;
+      }
+      
+      @keyframes tail-anim {
+        10% {
+          transform: rotate(-10deg)
+        }
+        25% {
+          transform: rotate(0)
+        }
+        30% {
+          transform: rotate(-10deg)
+        }
+        35% {
+          transform: rotate(0)
+        }
+        40% {
+          transform: rotate(-10deg)
+        }
+        45% {
+          transform: rotate(0)
+        }
+        60% {
+          transform: rotate(-10deg)
+        }
+        75% {
+          transform: rotate(0)
+        }
+        85% {
+          transform: rotate(-5deg)
+        }
+      }
+      
+      #second-circle {
+        animation: sec-anim 2s linear infinite;
+        transform-origin: bottom right;
+        transform-box: fill-box;
+      }
+      
+      @keyframes sec-anim {
+        50% {
+          transform: scale(.98)
+        }
+      }
+      
+      #third-circle {
+        animation: thi-anim 2s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+        transform-origin: bottom right;
+        transform-box: fill-box;
+      }
+      
+      @keyframes thi-anim {
+        50% {
+          transform: translateX(-3px)
+        }
+      }
+      
+      #fifth-circle {
+        animation: fifth-anim 2s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+      }
+      
+      @keyframes fifth-anim {
+        50% {
+          transform: translateY(-1px)
+        }
+      }
+      
+      #fourth-circle {
+        animation: fourth-anim 2s ease-in-out infinite;
+      }
+      
+      @keyframes fourth-anim {
+        50% {
+          transform: translateY(1px)
+        }
+      }
+      
+      #first-circle {
+        animation: first-anim 2s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+      }
+      
+      @keyframes first-anim {
+        50% {
+          transform: translateX(2px);
+        }
+      }
+      
+      #head {
+        animation: head-anim 2s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+        transform-origin: center right;
+        transform-box: fill-box;
+      }
+      
+      @keyframes head-anim {
+        25% {
+          transform: rotate(-3deg)
+        }
+        50% {
+          transform: translateX(2px) rotate(0deg)
+        }
+        75% {
+          transform: rotate(-3deg)
+        }
+      }
+    <h1>Snake</h1>
+    <canvas id="game" width="400" height="400"></canvas>
+    <script src="index.js"></script>
+  </body>
+</html>

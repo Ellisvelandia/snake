@@ -18,7 +18,8 @@ body {
 }
 
 h1 {
-  font-size: 8rem;
+  font-size: 5rem;
+  color: #fff;
 }
 canvas {
   width: 600px;
